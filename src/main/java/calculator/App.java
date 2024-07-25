@@ -12,6 +12,7 @@ public class App {
         int result = 0;
         int[] intarr = new int[10];
         int count =0;
+        int i;
 
         while (true) {
             firNum = sc.nextInt();
@@ -37,10 +38,16 @@ public class App {
                 }
             }
             System.out.println("결과: " + result);
-            for(int i =0;i<intarr.length;i++) {
+            if(intarr.length > 10) {
+                for(i=1;i<intarr.length;i++){
+                    intarr[i-1]=intarr[i];
+                }
+            }
+            for(i =0;i<intarr.length;i++) {
                 intarr[i] = result;
                 count++;
             }
+
 
 
             System.out.println("더 계산하기겠습니까? (exit 입력 시 종료)");
