@@ -53,7 +53,9 @@ public class App {
 
             System.out.println("저장된 연산결과를 조회하시겠니까? (inquriy 입력 시 조회) ");
             ss = sc.nextLine();
-            for(ArrayList<> list : )
+            for(int a : list) {
+                System.out.print(list.toString());
+            }
 
             System.out.println("더 계산하기겠습니까? (exit 입력 시 종료 OR 종료하지 않으려면 아무거나 누르세요)");
             String sc1 = sc.next();
