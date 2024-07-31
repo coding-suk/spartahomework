@@ -9,7 +9,7 @@ public class App {
         ArrayList<Integer> list = new ArrayList<>();
         Scanner sc = new Scanner(System.in);
         int firNum, secNum;
-        String s, ss;
+        String sc1, ss;
         char sign;
         int result = 0;
 //        int[] intarr = new int[10];
@@ -39,31 +39,42 @@ public class App {
                     System.out.println("분모에는 0이 들어갈수 없습니다.");
                 }
             }
+            list.add(result);
+            count++;
             System.out.println("결과: " + result);
-            for (int i = 0; i < list.size(); i++) {
-                list.add(result);
-                count++;
-            }
-
-            System.out.println("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력 시 삭제");
-            ss = sc.nextLine();
-            if (ss.equals("remove")) {
-                list.remove(0);
-            }
-
-            System.out.println("저장된 연산결과를 조회하시겠니까? (inquriy 입력 시 조회) ");
-            ss = sc.nextLine();
-            for(int a : list) {
-                System.out.print(list.toString());
-            }
 
             System.out.println("더 계산하기겠습니까? (exit 입력 시 종료 OR 종료하지 않으려면 아무거나 누르세요)");
-            String sc1 = sc.next();
+            sc1 = sc.next();
             if (sc1.equals("exit")) {
                 break;
             }
 
+            System.out.println("앞의 연산 결과는 제거하고 싶으면 remove, 저장된 연산결과를 조회하려면 inqury 입력");
+            ss = sc.next();
+            switch (ss) {
+                case "remove":
+                    list.remove(0);
+                    System.out.print(list.toString());
 
+                case "inqury":
+                    for (int b : list) {
+                        System.out.println("저장된 연상결과: " + list.get(b));
+                    }
+            }
+//            if (ss.equals("remove")) {
+//                System.out.println("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력 시 삭제");
+//                ss = sc.nextLine();
+//                if (ss.equals("remove")) {
+//                    list.remove(0);
+//                }
+//            } else if (ss.equals("inqury")) {
+//                System.out.println("저장된 연산결과를 조회하시겠니까? (inquriy 입력 시 조회) ");
+//                String sc2 = sc.nextLine();
+//                for (int b : list) {
+//                    System.out.print(list.toString());
+//                }
+//            }
+//        }
         }
     }
 }
